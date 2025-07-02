@@ -1,19 +1,13 @@
 fun main() {
-    val nums = intArrayOf(2, 7, 11, 15)
-    val target = 9
 
-    val resultado = twoSum(nums, target)
+    var resultado = palindromo(s = "A man, a plan, a canal: Panama!!")
+    println(resultado)
 
-    println("Índices encontrados: ${resultado.joinToString()}")
+
 }
 
-fun twoSum(nums: IntArray, target: Int): IntArray {
-    for (i in nums.indices) {
-        for (j in i + 1 until nums.size) {
-            if (nums[i] + nums[j] == target) {
-                return intArrayOf(i, j)
-            }
-        }
-    }
-    return intArrayOf()
+fun palindromo(s: String): Boolean {
+    val tratando = s.lowercase().filter { it.isLetterOrDigit() }
+    val reversed = tratando.reversed()
+    return tratando == reversed
 }
